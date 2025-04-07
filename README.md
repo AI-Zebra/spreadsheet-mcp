@@ -46,3 +46,13 @@ cd spreadsheet-mcp
 # Install development dependencies
 uv sync
 ```
+
+### Testing and Linting
+
+```bash
+# Run linting with ruff
+ruff check .
+
+# Run type checking with pyright
+pyright
+```

@@ -46,3 +46,13 @@ cd spreadsheet-mcp
 # 開発用依存関係のインストール
 uv sync
 ```
+
+### テストとリンティング
+
+```bash
+# ruffでリンティングを実行
+ruff check .
+
+# pyrightで型チェックを実行
+pyright
+```
