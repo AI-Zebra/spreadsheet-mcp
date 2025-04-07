@@ -59,7 +59,12 @@ def upload_df_to_worksheet(from_df: pl.DataFrame, to_worksheet: Worksheet) -> di
     for col in common_columns:
         col_index = to_df.columns.index(col)
         range_name = f"{rowcol_to_a1(2, col_index + 1)}:{rowcol_to_a1(from_df.shape[0] + 1, col_index + 1)}"
-        values = [[val] for val in from_df[col].to_list()]
+        values = [
+            # None will be skipped, so set the string value to an empty string.
+            # https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values#ValueRange
+            [val if val is not None else ""]
+            for val in from_df[col].to_list()
+        ]
         batch_update.append({"range": range_name, "values": values})
         updated_columns.append(col)
 
