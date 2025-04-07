@@ -1,17 +1,28 @@
 [project]
 name = "spreadsheet-mcp"
 version = "0.1.0"
-description = "Add your description here"
+description = "Google Spreadsheetを操作するためのMCPサーバー"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 dependencies = [
     "gspread>=6.2.0",
     "mcp[cli]>=1.6.0",
     "polars>=1.26.0",
 ]
 
+[project.scripts]
+spreadsheet-mcp = "spreadsheet_mcp.cli:main"
+
 [dependency-groups]
 dev = [
     "pyright>=1.1.398",
     "ruff>=0.11.4",
 ]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["spreadsheet_mcp"]
