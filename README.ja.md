@@ -25,8 +25,6 @@ https://docs.gspread.org/en/latest/oauth2.html
     "spreadsheet": {
       "command": "uvx",
       "args": [
-        "--from",
-        "git+https://github.com/yamitzky/spreadsheet-mcp.git",
         "spreadsheet-mcp"
       ]
     }

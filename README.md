@@ -2,6 +2,8 @@
 
 An MCP server for operating Google Spreadsheets (Google Sheets)
 
+[日本語README](https://github.com/yamitzky/spreadsheet-mcp/blob/main/README.ja.md)
+
 ## Features
 
 - Fetch data from Google Spreadsheets and display it in Markdown table format
@@ -25,8 +27,6 @@ https://docs.gspread.org/en/latest/oauth2.html
     "spreadsheet": {
       "command": "uvx",
       "args": [
-        "--from",
-        "git+https://github.com/yamitzky/spreadsheet-mcp.git",
         "spreadsheet-mcp"
       ]
     }
