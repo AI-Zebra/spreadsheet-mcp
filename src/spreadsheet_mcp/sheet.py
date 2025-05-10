@@ -46,11 +46,11 @@ def upload_df_to_worksheet(from_df: pl.DataFrame, to_worksheet: Worksheet) -> di
     skipped_columns = list(set(from_df.columns) - common_columns)
 
     # 行数の差分を計算
-    row_diff = from_df.shape[0] - to_df.shape[0]
+    row_diff = from_df.shape[0] - to_worksheet.row_count
     if row_diff > 0:
         to_worksheet.add_rows(row_diff)
     elif row_diff < 0:
-        to_worksheet.delete_rows(from_df.shape[0] + 2, to_df.shape[0] + 1)
+        to_worksheet.delete_rows(from_df.shape[0] + 2, to_worksheet.row_count + 1)
 
     # カラムごとに、データを更新
     batch_update: list[dict] = []
