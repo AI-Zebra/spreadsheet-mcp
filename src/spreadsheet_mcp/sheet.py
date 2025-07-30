@@ -4,11 +4,11 @@ import gspread
 import polars as pl
 from gspread.utils import ValueRenderOption, rowcol_to_a1
 from gspread.worksheet import Worksheet
-
+ 
 
 def open_spreadsheet(url: str):
    # gc = gspread.oauth()  # type: ignore
-     gc = gspread.service_account(filename='credentials.json')
+    gc = gspread.service_account(filename='credentials.json')
     spreadsheet = gc.open_by_url(url)
     worksheet: Worksheet | None = None
     if "#gid=" in url:
