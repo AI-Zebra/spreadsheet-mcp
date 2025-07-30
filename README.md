@@ -1,5 +1,7 @@
 # Spreadsheet MCP
 
+[![smithery badge](https://smithery.ai/badge/@AI-Zebra/spreadsheet-mcp1)](https://smithery.ai/server/@AI-Zebra/spreadsheet-mcp1)
+ 
 An MCP server for operating Google Spreadsheets (Google Sheets)
 
 [日本語README](https://github.com/yamitzky/spreadsheet-mcp/blob/main/README.ja.md)
